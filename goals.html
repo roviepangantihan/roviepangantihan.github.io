@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Goals</title>
+        <link rel="stylesheet" href="activities.css">
+    </head>
+    <body>
+        <section class="banner">
+            <header>
+                <a href="#" class="logo">Personal Information</a>
+                <div class="toggle"></div>
+            </header>
+
+            <img src="https://i.imgur.com/TLbUKVR.png" class="men">
+            <div class="content">
+                <div class="contentBx">
+                    <h4>GOALS</h4>
+                    <p>I want to be a successful Computer Programmer and work to a well-known company where I can gain new knowledge from the people around me and share the knowledge that I have to them as well. I also want to be a professional cryptocurrency trader, and have my own businesses.</p>
+                </div>
+            </div>
+
+            
+
+            <ul class="menu">
+                <li> <a href="index.html">Home</a></li>
+                <li> <a href="family.html">Family Background</a></li>
+                <li> <a href="activities.html">Activities</a></li>
+                <li> <a href="strength.html">Strengths and Weaknesses</a></li>
+                <li> <a href="goals.html">Goals</a></li>
+            </ul>
+
+            <img src="https://i.imgur.com/Y0hQOgF.png" class="elements" data-speed="8">
+            <img src="https://i.imgur.com/EOPR8Ys.png" class="elements" data-speed="6">
+            <img src="https://i.imgur.com/gnEm8VS.png" class="elements" data-speed="-10">
+            <img src="https://i.imgur.com/js3LHcJ.png" class="elements" data-speed="-6">
+
+        </section>
+
+        <script>
+            const toggle = document.querySelector('.toggle');
+            const banner = document.querySelector('.banner');
+            toggle.onclick = function(){
+                toggle.classList.toggle('active');
+                banner.classList.toggle('active');
+            }
+
+            function parallax(e){
+                this.querySelectorAll('.elements').forEach(layer =>{
+                    const speed = layer.getAttribute('data-speed');
+                    const x = (window.innerWidth - e.pageX*speed)/100;
+                    layer.style.transform = 'translateX(${x}px)';
+                })
+            }
+
+            document.addEventListener("mousemove", parallax);
+        </script>
+    </body>
+</html>

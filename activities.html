@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Personal Information</title>
+        <link rel="stylesheet" href="activities.css">
+    </head>
+    <body>
+        <section class="banner">
+            <header>
+                <a href="#" class="logo">Personal Information</a>
+                <div class="toggle"></div>
+            </header>
+
+            <img src="https://i.imgur.com/rnXEc09.png" class="men">
+            <div class="content">
+                <div class="contentBx">
+                    <h4>HOBBIES, SKILLS, AND TALENTS</h4>
+                    <p>I am a cycling enthusiast and I love everything about cycling. I also had a chance to participate on few cycling races where I represented my past teams. Just last year, I also tried and enjoyed running. Also, other activities that I enjoy doing includes cooking, gardening, and studying. Some people think that I love playing video games but in reality, I don't really enjoy it that much.</p>
+                </div>
+            </div>
+
+            
+
+            <ul class="menu">
+                <li> <a href="index.html">Home</a></li>
+                <li> <a href="family.html">Family Background</a></li>
+                <li> <a href="activities.html">Activities</a></li>
+                <li> <a href="strength.html">Strengths and Weaknesses</a></li>
+                <li> <a href="goals.html">Goals</a></li>
+            </ul>
+
+            <img src="https://i.imgur.com/Y0hQOgF.png" class="elements" data-speed="8">
+            <img src="https://i.imgur.com/EOPR8Ys.png" class="elements" data-speed="6">
+            <img src="https://i.imgur.com/gnEm8VS.png" class="elements" data-speed="-10">
+            <img src="https://i.imgur.com/js3LHcJ.png" class="elements" data-speed="-6">
+
+        </section>
+
+        <script>
+            const toggle = document.querySelector('.toggle');
+            const banner = document.querySelector('.banner');
+            toggle.onclick = function(){
+                toggle.classList.toggle('active');
+                banner.classList.toggle('active');
+            }
+
+            function parallax(e){
+                this.querySelectorAll('.elements').forEach(layer =>{
+                    const speed = layer.getAttribute('data-speed');
+                    const x = (window.innerWidth - e.pageX*speed)/100;
+                    layer.style.transform = 'translateX(${x}px)';
+                })
+            }
+
+            document.addEventListener("mousemove", parallax);
+        </script>
+    </body>
+</html>
